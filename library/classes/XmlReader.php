@@ -57,13 +57,14 @@ class XmlReader extends File
     protected function preView($type)
     {
         if ( $type === 'xml1' ) {
-            foreach ( $this->fileInArray['workers']['worker'] as $index => $worker ) {
+            foreach ( $this->fileInArray['workers']['worker'] as $worker ) {
+                $item = $worker['param'];
                 $this->_view .= sprintf('<tr> <td>%s</td><td>%s</td><td>%s</td></tr>',
-                    $worker['param'][0] . ' ' . $worker['param'][1] . ' ' . $worker['param'][2], $worker['param'][3], $worker['param'][4]);
+                    $item[0] . ' ' . $item[1] . ' ' . $item[2], $item[3], $item[4]);
             }
         }
         else {
-            foreach ( $this->fileInArray['workers']['worker'] as $index => $worker ) {
+            foreach ( $this->fileInArray['workers']['worker'] as $worker ) {
                 $this->_view .= sprintf('<tr> <td>%s</td><td>%s</td><td>%s</td></tr>',
                     $worker[$this->fields['first_name']] . ' ' . $worker[$this->fields['last_name']] . ' ' . $worker[$this->fields['middle_name']], $worker[$this->fields['birth_date']], $worker[$this->fields['comment']]);
             }

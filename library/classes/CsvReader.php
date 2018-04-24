@@ -25,7 +25,7 @@ class CsvReader extends File
         $this->_view = $this->table_start;
         $this->_view .= '<tr> <th>FIO</th><th>Birth</th><th>Comment</th></tr>';
 
-        foreach ( $this->fileInArray as $index => $item ) {
+        foreach ( $this->fileInArray as $item ) {
             $this->_view .= sprintf('<tr> <td>%s</td><td>%s</td><td>%s</td></tr>',
                 $item[0] . ' ' . $item[1] . ' ' . $item[2], $item[3], $item[4]);
         }
