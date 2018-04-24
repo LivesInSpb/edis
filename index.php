@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_error", true);
-ini_set("error_reporting", E_ALL);
 
 $phpVersion = 7;
 echo PHP_MAJOR_VERSION === $phpVersion ? "ok. php version is 7+" : "Please update PHP! Need php 7.0+";

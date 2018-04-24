@@ -14,6 +14,7 @@ class XmlReader extends File
      * fields for view.
      * If count fields need more - add more
      */
+    //@formatter:off
     protected $fields = [
         'first_name'        => 'fname',
         'last_name'         => 'lname',
@@ -21,7 +22,7 @@ class XmlReader extends File
         'birth_date'        => 'birth_date',
         'comment'           => 'comment'
     ];
-
+    //@formatter:on
     protected $json = '';
 
     function __construct($file, string $typeFile)
@@ -67,6 +68,5 @@ class XmlReader extends File
                     $worker[$this->fields['first_name']] . ' ' . $worker[$this->fields['last_name']] . ' ' . $worker[$this->fields['middle_name']], $worker[$this->fields['birth_date']], $worker[$this->fields['comment']]);
             }
         }
-      //  return $this->_view;
     }
 }

@@ -10,15 +10,17 @@ abstract class File
     public $_view = null;
     public $fileInArray = null;
 
-    public function __construct($file) {
-        if (file_exists($file)) {
+    public function __construct($file)
+    {
+        if ( file_exists($file) ) {
             $this->file = $file;
         }
         else {
-            new \Exception("Файл ".$file." не найден");
+            new \Exception("Файл " . $file . " не найден");
         }
     }
 
     abstract function readFile(): array;
+
     abstract function view(): string;
 }
